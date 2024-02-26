@@ -1,12 +1,10 @@
 
-import './App.css'
-
 function App() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold">
-        Hello world!
+      <h1 className="text-3xl font-bold bg-green-600 p-4 text-center m-4">
+        React Router
       </h1>
     </>
   )
