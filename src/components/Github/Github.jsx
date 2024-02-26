@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
 
 const Github = () => {
-    const [data, setData] = useState({});
+  const data = useLoaderData();
+    // const [data, setData] = useState({});
 
-    useEffect(() => {
-        fetch("https://api.github.com/users/pushpendraa3")
-        .then(res => res.json())
-        .then(data => setData(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch("https://api.github.com/users/pushpendraa3")
+    //     .then(res => res.json())
+    //     .then(data => setData(data))
+    // }, [])
   return (
     <div>
       <div className='text-center m-4 bg-gray-600 text-white p-4 text-3xl'>Github followers: {data.followers}
@@ -19,3 +21,9 @@ const Github = () => {
 }
 
 export default Github
+
+export const loadGithubData = async () => {
+  const res = await fetch("https://api.github.com/users/pushpendraa3")
+  const response = res.json();
+  return response;
+}
